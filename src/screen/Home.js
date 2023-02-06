@@ -1,5 +1,5 @@
 
-import React, { Suspense, useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import Navbar from "../components/Navbar";
@@ -17,8 +17,8 @@ const Cube = () => {
       return;
     }
 
-    meshRef.current.rotation.x += 0.005;
-    meshRef.current.rotation.y += 0.005;
+    meshRef.current.rotation.x += 0.002;
+    meshRef.current.rotation.y += 0.002;
 
   })
 
@@ -64,7 +64,7 @@ const Home = () => {
         
           <img 
             src={`${process.env.PUBLIC_URL}/logo.png`}
-            className='w-52 sm:mx-4 my-2 animate-waving-hand z-20'
+            className='w-52 sm:mx-4 my-2 z-20'
           />
           <h1 className="text-xs sm:text-lg font-sankr font-bold z-20">
             프랭크엑스 주식회사(Fprank X INC)는 IT 서비스/제품 기획 및 개발을 진행하고 있으며

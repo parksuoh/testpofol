@@ -16,7 +16,7 @@ const Header = ({sideBar, setSideBar}) => {
         <Link to="/">
             <img 
                 src={`${process.env.PUBLIC_URL}/FPrankX_Y.png`}
-                className='w-32 sm:w-40'
+                className='w-32 sm:w-40 animate-waving-hand'
             />
         </Link>
         <div className="hidden sm:flex">
