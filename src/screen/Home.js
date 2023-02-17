@@ -11,7 +11,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 
 const Cube = () => {
-  const gltf = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/the_heroine_of_the_cartoon/scene.gltf`)
+  const gltf = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/organic/scene.gltf`)
   const meshRef = useRef(null);
   const { viewport } = useThree()
 
@@ -20,10 +20,12 @@ const Cube = () => {
       return;
     }
 
-    const x = (mouse.x * viewport.width) / 2
-    const y = (mouse.y * viewport.height) / 2
+    const x = (mouse.x * viewport.width) / 4
+    const y = (mouse.y * viewport.height) / 4
+    // meshRef.current.position.set(x, y, 0)
+    // meshRef.current.rotation.set(-y, x, 0)
     meshRef.current.rotation.x -= y * 0.01;
-    meshRef.current.rotation.y += x * 0.01;
+    meshRef.current.rotation.y += x * 0.015;
 
   })
 
@@ -32,12 +34,13 @@ const Cube = () => {
       <primitive
         ref={meshRef}
         object={gltf.scene}
-        scale={0.3}
+        scale={0.8}
       />
     </>
   )
 
 }
+
 
 
 const Home = () => {

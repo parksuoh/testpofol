@@ -1,0 +1,11 @@
+Model Information:
+* title:	Organic
+* source:	https://sketchfab.com/3d-models/organic-f2b72ab76fb042bc8d6776eef68c63f0
+* author:	fox_cyber (https://sketchfab.com/lalolda99)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Organic" (https://sketchfab.com/3d-models/organic-f2b72ab76fb042bc8d6776eef68c63f0) by fox_cyber (https://sketchfab.com/lalolda99) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
