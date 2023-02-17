@@ -6,27 +6,35 @@ import Navbar from "../components/Navbar";
 import { MdPalette } from "react-icons/md";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { MdEqualizer } from "react-icons/md";
-import { Canvas, useFrame } from 'react-three-fiber';
+import { Canvas, useFrame, useLoader, useThree } from 'react-three-fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 
 const Cube = () => {
+  const gltf = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/the_heroine_of_the_cartoon/scene.gltf`)
   const meshRef = useRef(null);
+  const { viewport } = useThree()
 
-  useFrame(() => {
+  useFrame(({ mouse }) => {
     if(!meshRef.current){
       return;
     }
 
-    meshRef.current.rotation.x += 0.002;
-    meshRef.current.rotation.y += 0.002;
+    const x = (mouse.x * viewport.width) / 2
+    const y = (mouse.y * viewport.height) / 2
+    meshRef.current.rotation.x -= y * 0.01;
+    meshRef.current.rotation.y += x * 0.01;
 
   })
 
   return(
-    <mesh ref={meshRef}>
-      <boxGeometry args={[5, 5, 5]} />
-      <meshStandardMaterial />
-    </mesh>
+    <>
+      <primitive
+        ref={meshRef}
+        object={gltf.scene}
+        scale={0.3}
+      />
+    </>
   )
 
 }
@@ -51,9 +59,9 @@ const Home = () => {
           className='z-0 w-full sm:w-19/20 h-[1090px] sm:h-[970px] absolute top-[609px] sm:top-[580px] left-1/2 translate-x-[-50%] translate-y-[-50%]' 
         >
           <Canvas>
-            <ambientLight intensity={0.3} color="#FFFFFF" />
+            <ambientLight intensity={0.3} color="#FAEBD7" />
             <pointLight intensity={1.0} position={[10, 10, 10]} />
-            <Cube />
+            <Cube  />
           </Canvas>
         </div>
 
